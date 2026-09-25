@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[2333,[],"ViewportBoundary"]
+3:I[2333,[],"MetadataBoundary"]
+4:"$Sreact.suspense"
+5:I[1112,[],"IconMark"]
+0:{"buildId":"D_e1KraxcwUMwHwoTndmX","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"星月小女侠的知识冒险"}],["$","meta","1",{"name":"description","content":"用智慧守护和平！星月小女侠的知识冒险——一款融合知识答题与回合制战斗的儿童RPG游戏。"}],["$","meta","2",{"name":"author","content":"星月小女侠"}],["$","meta","3",{"name":"keywords","content":"知识冒险,儿童游戏,RPG,答题,学习,星月小女侠"}],["$","meta","4",{"name":"robots","content":"index, follow"}],["$","link","5",{"rel":"icon","href":"/starlight-heroine/favicon.ico?603d046c9a6fdfbb","type":"image/x-icon","sizes":"16x16"}],["$","$L5","6",{}]]}]}]}],null]}],"loading":null,"isPartial":false}
