@@ -18,3 +18,11 @@
 .avatar-orbit.orbit-2{animation-name:avatar-orbit-b;animation-duration:11s}
 .hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}
 @media (max-width:380px){.hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* [patch-v3] 补齐 DOM 中已使用但从未定义的两个幽灵类：.title-sparkle（标题星光呼吸光晕，纯 text-shadow 动画，不参与布局、不影响 emoji）、.hover-glow（仅 hover 时粉色光晕环，静态外观不变、无 transform） */
+.title-sparkle{animation:title-sparkle-glow 3.2s ease-in-out infinite}
+@keyframes title-sparkle-glow{
+  0%,100%{text-shadow:0 2px 6px rgba(0,0,0,.06)}
+  50%{text-shadow:0 0 14px rgba(255,182,214,.85),0 0 26px rgba(216,180,254,.55),0 2px 6px rgba(0,0,0,.06)}
+}
+.hover-glow{transition:box-shadow .35s ease}
+.hover-glow:hover{box-shadow:0 0 0 3px rgba(255,209,232,.85),0 8px 26px rgba(196,132,208,.35)}
