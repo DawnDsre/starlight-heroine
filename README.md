@@ -361,3 +361,44 @@ export const useStore = create<Store>((set) => ({
 3. **遵循 Next.js App Router 规范**，正确区分服务端/客户端组件
 4. **使用 TypeScript** 进行类型安全开发
 5. **使用 `@/` 路径别名** 导入模块（已配置）
+
+---
+
+## 本项目构建与部署（starlight-heroine）
+
+> 以下为本项目的实际约定，与上方模板说明不一致时，**以本节为准**。
+
+### 分支布局
+| 分支 | 内容 |
+|---|---|
+| `main` | **部署产物**（`next build` 的静态导出结果），GitHub Pages 从该分支根目录部署 |
+| `source` | **源码**（本目录），推送到该分支会自动触发 CI 构建并发布到 `main` |
+
+### 本地开发
+```bash
+corepack pnpm install --frozen-lockfile --ignore-scripts
+corepack pnpm exec next dev          # 开发服务器
+```
+> ⚠️ Windows 下 esbuild 的 postinstall 可能报 `EBUSY`（并发 spawn node.exe 的文件锁），
+> 用 `--ignore-scripts` 安装即可，不影响构建（esbuild 二进制来自平台可选依赖，postinstall 仅做自校验）。
+
+### 本地构建（静态导出）
+```bash
+corepack pnpm exec next build --webpack
+# 产物输出到 out/ ，必须包含 out/.nojekyll
+```
+> ⚠️ **不要**用 `pnpm run build`：它会额外执行 `tsup src/server.ts` 做服务端打包，静态导出用不到。
+> ⚠️ 构建前若已存在 `.next/`，先 `rm -rf .next out`，否则清理旧产物可能失败。
+> ⚠️ 偶发 `EPERM .next\trace`：新目录被杀软瞬时占锁，重试即可。
+
+### 关键约定
+- **`public/.nojekyll` 必须存在**：Next 静态导出不会生成它；缺了它 GitHub Pages 会用 Jekyll 处理并
+  **忽略 `_next/` 目录，导致全站样式与 JS 404**。它靠 `public/` 目录随构建自动复制到产物根。
+- **路由跳转只允许真实存在的路由**：`/`、`/character`、`/levels`、`/levels/play?levelId=N`、
+  `/levels/play/battle?levelId=N`、`/levels/play/knowledge?levelId=N`。
+  `/levels/<数字>` 这类路径**没有对应路由**，会 404。
+- **关卡「已通关」判定**：`关卡号 < gameState.currentLevel`（`completeBattle` 只在 currentSubLevel>3 时推进 currentLevel）。
+
+### 自动部署（CI）
+`.github/workflows/deploy.yml`：push 到 `source` 分支 → pnpm 安装 → `next build --webpack` →
+把 `out/` 提交到 `main` → Pages 自动重新部署。也可在 Actions 页面手动触发（workflow_dispatch）。
