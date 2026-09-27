@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-2:I[2656,[],""]
-3:I[4118,[],""]
-:HL["/starlight-heroine/_next/static/css/12d77318e829ce33.css","style"]
-0:{"buildId":"D_e1KraxcwUMwHwoTndmX","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/starlight-heroine/_next/static/css/12d77318e829ce33.css","precedence":"next"}]],["$","html",null,{"lang":"zh-CN","children":["$","body",null,{"className":"antialiased","children":[false,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}]}]]}],"loading":null,"isPartial":false}
+2:I[8520,[],""]
+3:I[7886,[],""]
+:HL["/starlight-heroine/_next/static/css/1b8c6060cead1508.css","style"]
+0:{"buildId":"oLZxm7QOGbOYp3CT2OQlB","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/starlight-heroine/_next/static/css/1b8c6060cead1508.css","precedence":"next"}]],["$","html",null,{"lang":"zh-CN","children":["$","body",null,{"className":"antialiased","children":[false,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}]}]]}],"loading":null,"isPartial":false}
