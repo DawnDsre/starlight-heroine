@@ -1,0 +1,20 @@
+[project]
+project_name = "starlight-heroine"
+project_type = "web"
+project_id = "7686498752961757234"
+app_id = "7686674013262807050"
+requires = [ "nodejs-24" ]
+template = "nextjs"
+version = "0.0.27"
+appliedPatches = [ ]
+
+[dev]
+build = [ "bash", "./scripts/prepare.sh" ]
+run = [ "bash", "./scripts/dev.sh" ]
+validate = [ "bash", "./scripts/validate.sh" ]
+deps = [ "git" ]
+
+[deploy]
+build = [ "bash", "./scripts/build.sh" ]
+run = [ "bash", "./scripts/start.sh" ]
+deps = [ "git" ]
