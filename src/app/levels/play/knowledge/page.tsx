@@ -322,7 +322,20 @@ function KnowledgeContent() {
               <p className={`font-bold mb-2 text-lg ${isCorrect ? 'text-green-600' : 'text-red-600'}`}>
                 {isCorrect ? (combo >= 3 ? `✅ 回答正确！连击 x${combo}！` : '✅ 回答正确！') : '❌ 回答错误'}
               </p>
-              <p className="text-gray-600 leading-relaxed">{currentQuestion.explanation}</p>
+              <div className="text-gray-700 leading-relaxed space-y-2">
+                <div>
+                  <p className="font-bold text-purple-600 mb-0.5">📖 答案解释</p>
+                  <p className="text-gray-600">
+                    {currentQuestion.answerExplain || currentQuestion.explanation}
+                  </p>
+                </div>
+                {currentQuestion.answerInspire && (
+                  <div className="rounded-xl bg-amber-50/90 border border-amber-200 px-3 py-2">
+                    <p className="font-bold text-amber-600 mb-0.5">💡 答案启发</p>
+                    <p className="text-gray-600">{currentQuestion.answerInspire}</p>
+                  </div>
+                )}
+              </div>
               {isCorrect && (
                 <p className="text-amber-600 mt-2 font-medium animate-pop-in">
                   +{10 + currentQuestion.difficulty * 5} ✨ 经验值
