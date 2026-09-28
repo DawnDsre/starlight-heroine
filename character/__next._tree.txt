@@ -1,2 +1,0 @@
-:HL["/starlight-heroine/_next/static/css/1b8c6060cead1508.css","style"]
-0:{"buildId":"oLZxm7QOGbOYp3CT2OQlB","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"character","paramType":null,"paramKey":"character","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
