@@ -12,7 +12,11 @@ export interface Question {
   question: string;
   options: string[];
   correctAnswer: number;
+  /** 答案解释：说明答案的依据与相关知识 */
   explanation: string;
+  answerExplain: string;
+  /** 答案启发：延伸提示或启发性信息 */
+  answerInspire: string;
 }
 
 // 技能类型
